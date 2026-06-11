@@ -71,16 +71,3 @@ Failsafe is a two-part student risk assessment system with a Python FastAPI back
 - Risk analytics and progress summaries for selected professors.
 - Python ML engine with explainable risk factors.
 
-## Notes for GitHub upload
-
-- The repository already includes a `.gitignore` to exclude local caches, virtual environments, build artifacts, and database files.
-- Do not commit generated folders such as `node_modules/`, `venv/`, or any local database files.
-
-## Additional information
-
-- If you need to reset the backend database, delete `backend/failsafe.db` and restart the API server.
-- The ML model file `backend/failsafe_production_engine.pkl` is required by the backend predictions.
-
-## Contact
-
-For any issue or improvement request, open a new GitHub issue after uploading the repository.

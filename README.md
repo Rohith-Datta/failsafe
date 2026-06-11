@@ -1,6 +1,6 @@
 # Failsafe
 
-Failsafe is a two-part student risk assessment system with a Python FastAPI backend and a React + TypeScript frontend. It helps professors track student risk, store assessment results, and lets HODs review departmental professor analytics.
+Failsafe is an AI-powered student risk assessment platform. By combining a predictive Machine Learning engine with a modern web architecture (FastAPI + React/TypeScript), it transforms raw student data into actionable insights. Professors receive instant risk scores and customized intervention strategies, while HODs gain access to high-level departmental analytics to ensure no student slips through the cracks.
 
 ## Project overview
 
@@ -65,9 +65,9 @@ Failsafe is a two-part student risk assessment system with a Python FastAPI back
 
 ## Key features
 
-- Secure JWT-based authentication for all protected routes.
-- Assessment storage with professor-level data isolation.
-- Department professor listing for HOD users.
-- Risk analytics and progress summaries for selected professors.
-- Python ML engine with explainable risk factors.
+- **Explainable AI Engine:** Python-driven XGBoost model utilizing SHAP values to mathematically isolate the exact driving factors behind student risk.
+- **Active Intervention Pipeline:** Interactive task management allowing professors to track, execute, and complete AI-generated student action plans.
+- **Targeted Professor Analytics:** Real-time visual tracking of individual intervention completion rates and dominant classroom risk trends.
+- **Departmental Command Center:** Top-down visibility for HODs to monitor faculty engagement, compare risk aggregates, and audit department-wide progress.
+- **Strict Data Isolation:** JWT-secured, role-based architecture guaranteeing complete privacy between individual professor workloads and departmental oversight.
 

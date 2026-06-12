@@ -16,6 +16,15 @@ Failsafe is an AI-powered student risk assessment platform. By combining a predi
 
 ## Setup instructions
 
+### Prerequisites
+
+**Python Version:** Python 3.10 or 3.11 is **recommended** for the best compatibility. While Python 3.12 works, it may have compatibility issues with the `numba` package (which is used by SHAP and XGBoost). Avoid Python 3.13+ for now.
+
+To check your Python version:
+```bash
+python --version
+```
+
 ### 1. Backend setup
 
 1. Open a terminal in `backend/`.
@@ -24,13 +33,17 @@ Failsafe is an AI-powered student risk assessment platform. By combining a predi
    python -m venv venv
    ```
 3. Activate the virtual environment:
-   - Windows PowerShell:
+   - **Windows PowerShell:**
      ```powershell
      .\venv\Scripts\Activate.ps1
      ```
-   - Windows Command Prompt:
+   - **Windows Command Prompt:**
      ```cmd
      .\venv\Scripts\activate.bat
+     ```
+   - **macOS/Linux:**
+     ```bash
+     source venv/bin/activate
      ```
 4. Install dependencies:
    ```bash
@@ -54,6 +67,34 @@ Failsafe is an AI-powered student risk assessment platform. By combining a predi
    npm run dev
    ```
 4. The frontend will typically run at `http://localhost:5173`.
+
+### 3. API URL Configuration
+
+**⚠️ Important:** The API URL is currently hardcoded in the frontend as `http://127.0.0.1:8000`. This **may not work** if:
+- Running the backend on a different machine or computer
+- Running on macOS or Linux (where the port or IP may differ)
+- Running the backend remotely or on a server
+
+**To fix this for your setup:**
+
+1. Open `failsafe_frontend/src/lib/assessments.functions.ts` and update the API URL:
+   ```typescript
+   const API_BASE_URL = "http://127.0.0.1:8000"; // Change this to your backend URL
+   ```
+
+2. Also update the hardcoded URLs in `failsafe_frontend/src/routes/auth.tsx`:
+   - Line 53: `http://127.0.0.1:8000/login`
+   - Line 90: `http://127.0.0.1:8000/register`
+   - Line 102: `http://127.0.0.1:8000/login`
+
+**Common configurations:**
+- **Same computer (localhost):** `http://127.0.0.1:8000` or `http://localhost:8000`
+- **Different computer on same network:** `http://<backend-ip>:8000` (replace with actual IP)
+- **macOS/Linux:** Use `http://localhost:8000` instead of `127.0.0.1` if connecting locally
+
+**To find your backend IP address:**
+- **Windows:** Run `ipconfig` in PowerShell
+- **macOS/Linux:** Run `ifconfig` in terminal and look for the local IP address
 
 ## Running the application
 

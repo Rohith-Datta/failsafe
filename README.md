@@ -13,6 +13,7 @@ Failsafe is an AI-powered student risk assessment platform. By combining a predi
 - `backend/` – Python API server, database models, ML engine, authentication, assessment endpoints.
 - `failsafe_frontend/` – React application, UI components, routes, and API client logic.
 - `.gitignore` – ignores temporary and generated files such as `node_modules`, virtual environments, caches, and local databases.
+- 'failsafe_MLmodel.ipynb' - Jupyter notebook containing the ML model used with detailed explanation.
 
 ## Setup instructions
 
